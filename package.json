@@ -1,0 +1,23 @@
+{
+  "name": "advanced-css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilx/advanced-css.git"
+  },
+  "author": "Nikhil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhilx/advanced-css/issues"
+  },
+  "homepage": "https://github.com/nikhilx/advanced-css#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.0"
+  },
+  "dependencies": {}
+}
