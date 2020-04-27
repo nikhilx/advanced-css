@@ -7,6 +7,17 @@
     border-radius: 3px;
     padding: 6rem;
     padding-left: 9rem;
+    transform: skewX(-12deg);
+
+    /* Used ro anti skew the content from the shape. Doesn't work in this case due
+    to &__shape having a transform and two transforms currently don't work at the 
+    same time */
+
+    /*The selector selects all direct childs of the element*/
+
+    // & > * {
+    //     transform: skewX(-12deg);
+    // }
 
     &__shape {
         width: 15rem;
@@ -21,10 +32,14 @@
         clip-path: circle(50% at 50% 50%);
 
         //to space an element which is floated, better to use transform than using margins
-        transform: translateX(-3rem);
+        transform: translateX(-3rem) skewX(12deg);
     }
 
     &__img {
         height: 100%;
+    }
+
+    &__text {
+        transform: skewX(12deg);
     }
 }

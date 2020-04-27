@@ -320,7 +320,12 @@ body {
   background-color: #fff;
   border-radius: 3px;
   padding: 6rem;
-  padding-left: 9rem; }
+  padding-left: 9rem;
+  transform: skewX(-12deg);
+  /* Used ro anti skew the content from the shape. Doesn't work in this case due
+    to &__shape having a transform and two transforms currently don't work at the 
+    same time */
+  /*The selector selects all direct childs of the element*/ }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -330,9 +335,11 @@ body {
     -webkit-shape-outside: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    transform: translateX(-3rem); }
+    transform: translateX(-3rem) skewX(12deg); }
   .story__img {
     height: 100%; }
+  .story__text {
+    transform: skewX(12deg); }
 
 .section-about {
   background-color: #f7f7f7;
