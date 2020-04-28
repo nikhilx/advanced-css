@@ -1,5 +1,4 @@
 .navigation {
-
     &__checkbox {
         display: none;
     }
@@ -13,10 +12,21 @@
         right: 6rem;
         border-radius: 50%;
         z-index: 2000;
-        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
         //for navigation icon to be cenetered
         text-align: center;
         cursor: pointer;
+
+        //to position the menu button in line with the logo
+        @include respond($breakpoint-tab-port) {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        @include respond($breakpoint-phone) {
+            top: 3rem;
+            right: 3rem;
+        }
     }
 
     &__background {
@@ -29,7 +39,18 @@
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
         //custom time functions such as ease in etc
-        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+        transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+        //to position the menu button in line with the logo
+        @include respond($breakpoint-tab-port) {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+
+        @include respond($breakpoint-phone) {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 
     &__nav {
@@ -41,7 +62,7 @@
         z-index: 1500;
         opacity: 0;
         //custom time functions such as ease in etc
-        transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     &__list {
@@ -58,7 +79,6 @@
     }
 
     &__link {
-
         &:link,
         &:visited {
             display: inline-block;
@@ -72,7 +92,7 @@
             //using background position
             background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
             background-size: 230%;
-            transition: all .4s;
+            transition: all 0.4s;
         }
 
         span {
@@ -90,11 +110,11 @@
 
     //Functionality
 
-    &__checkbox:checked~&__background {
+    &__checkbox:checked ~ &__background {
         transform: scale(80);
     }
 
-    &__checkbox:checked~&__nav {
+    &__checkbox:checked ~ &__nav {
         opacity: 1;
         width: 100%;
     }
@@ -118,38 +138,36 @@
             content: "";
             position: absolute;
             left: 0;
-            transition: all .2s;
+            transition: all 0.2s;
         }
 
         &::before {
-            top: -.8rem;
+            top: -0.8rem;
         }
 
         &::after {
-            top: .8rem;
+            top: 0.8rem;
         }
     }
 
     &__button:hover &__icon::before {
-        top: -1rem
+        top: -1rem;
     }
 
     &__button:hover &__icon::after {
-        top: 1rem
+        top: 1rem;
     }
 
-    &__checkbox:checked+&__button &__icon {
+    &__checkbox:checked + &__button &__icon {
         background-color: transparent;
     }
 
-
-    &__checkbox:checked+&__button &__icon::before {
+    &__checkbox:checked + &__button &__icon::before {
         top: 0;
         transform: rotate(135deg);
     }
 
-
-    &__checkbox:checked+&__button &__icon::after {
+    &__checkbox:checked + &__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
     }
