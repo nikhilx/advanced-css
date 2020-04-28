@@ -2,8 +2,8 @@
     font-size: $default-font-size;
     width: 75%;
     margin: 0 auto;
-    box-shadow: 0 3rem 6rem rgba($color-black, .1);
-    background-color: rgba($color-white, .6);
+    box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+    background-color: rgba($color-white, 0.6);
     border-radius: 3px;
     padding: 6rem;
     padding-left: 9rem;
@@ -14,10 +14,19 @@
     same time */
 
     /*The selector selects all direct childs of the element*/
-
     // & > * {
     //     transform: skewX(-12deg);
     // }
+
+    @include respond($breakpoint-tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond($breakpoint-phone) {
+        transform: skewX(0);
+    }
 
     &__shape {
         width: 15rem;
@@ -34,17 +43,24 @@
         //to space an element which is floated, better to use transform than using margins
         transform: translateX(-3rem) skewX(12deg);
         position: relative;
+
+        @include respond($breakpoint-phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__img {
         height: 100%;
         transform: translateX(-2em) scale(1.4);
         transition: all 0.5s;
-
     }
 
     &__text {
         transform: skewX(12deg);
+
+        @include respond($breakpoint-phone) {
+            transform: skewX(0);
+        }
     }
 
     &__caption {
