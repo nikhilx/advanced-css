@@ -2,6 +2,7 @@
     background-color: $color-gray-dark-3;
     padding: 12rem 0;
     font-size: 1.4rem;
+    color: $color-gray-light-1;
 
     &__logo-box {
         text-align: center;
@@ -15,8 +16,9 @@
     }
 
     &__navigation {
-        border-top: 1px solid $color-gray-light-2;
+        border-top: 1px solid $color-gray-dark;
         padding-top: 2rem;
+        display: inline-block;
     }
 
     &__list {
@@ -27,7 +29,7 @@
         display: inline-block;
 
         &:not(:last-child) {
-            margin-right: 25rem;
+            margin-right: 1.5rem;
         }
     }
 
@@ -49,5 +51,12 @@
             box-shadow: 0 1rem 2ren rgba($color-black, 0.4);
             transform: rotate(5deg) scale(1.3);
         }
+    }
+
+    &__copyright {
+        border-top: 1px solid $color-gray-dark;
+        padding-top: 2rem;
+        width: 80%;
+        float: right;
     }
 }
