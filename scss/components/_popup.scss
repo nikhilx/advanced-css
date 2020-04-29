@@ -4,18 +4,26 @@
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: rgba($color-black, .8);
+    background-color: rgba($color-black, 0.8);
     z-index: 4000;
     opacity: 0;
     visibility: hidden;
-    transition: all .3s;
+    transition: all 0.3s;
 
     //not this way because we cannot animate it
     //display: none;
 
+    // To check if a browser support a css property or not. If yes, the code
+    //will apply
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-black, 0.3);
+    }
+
     &__content {
         width: 75%;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
         background-color: $color-white;
         border-radius: 3px;
 
@@ -24,8 +32,8 @@
         overflow: hidden;
 
         opacity: 0;
-        transform: translate(-50%, -50%) scale(.25);
-        transition: all .5s .2s;
+        transform: translate(-50%, -50%) scale(0.25);
+        transition: all 0.5s 0.2s;
     }
 
     &__left {
@@ -71,17 +79,15 @@
     }
 
     &__close {
-
         &:link,
-        &:visited,
-            {
+        &:visited {
             color: $color-gray-dark;
             position: absolute;
             top: 2.5rem;
             right: 2.5rem;
             font-size: 3rem;
             text-decoration: none;
-            transition: all .2s;
+            transition: all 0.2s;
             line-height: 1;
         }
 
@@ -89,6 +95,4 @@
             color: $color-primary;
         }
     }
-
-
 }
