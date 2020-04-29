@@ -161,7 +161,8 @@
         font-weight: 100;
     }
 
-    @include respond($breakpoint-tab-port) {
+    //For the condition where you could not hover
+    @media only screen and (max-width: 56.25em), only screen and (hover: none) {
         //FUNCTIONALITY
         height: auto;
         border-radius: 3px;

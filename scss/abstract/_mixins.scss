@@ -36,28 +36,29 @@
 @mixin respond($breakpoint) {
     @if $breakpoint==$breakpoint-phone {
         //600px
-        @media (max-width: 37.5em) {
+        @media only screen and (max-width: 37.5em) {
             @content;
         }
     }
 
     @if $breakpoint==$breakpoint-tab-port {
         //900px
-        @media (max-width: 56.25em) {
+        //only screen for the reason so as not to apply if someone prints our page
+        @media only screen and (max-width: 56.25em) {
             @content;
         }
     }
 
     @if $breakpoint==$breakpoint-tab-land {
         //1200px
-        @media (max-width: 75em) {
+        @media only screen and (max-width: 75em) {
             @content;
         }
     }
 
     @if $breakpoint==$breakpoint-big-desktop {
         //1800px
-        @media (max-width: 112.5em) {
+        @media only screen and (max-width: 112.5em) {
             @content;
         }
     }
